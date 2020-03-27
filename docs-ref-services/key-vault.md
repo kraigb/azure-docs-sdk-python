@@ -4,7 +4,7 @@ description: Reference documentation for the Python client libraries for Azure K
 author: sptramer
 manager: carmonm
 ms.author: sttramer
-ms.date: 11/25/2019
+ms.date: 03/26/2020
 ms.topic: conceptual
 ms.devlang: python
 ms.service: keyvault
@@ -49,8 +49,8 @@ credential = DefaultAzureCredential()
 
 key_client = KeyClient("https://<vaultname>.vault.azure.net", credential)
 
-//NOTE: please replace the ("<your-key-name>") with the name of your key in the vault 
-key = key_client.get_key("<your-key-name>")
+# NOTE: replace "key-name" with the name of your key in the vault 
+key = key_client.get_key("key-name")
 print(key.name)
 ```
 
@@ -64,10 +64,9 @@ credential = DefaultAzureCredential()
 
 secret_client = SecretClient(vault_url="https://<vaultname>.vault.azure.net", credential=credential)
 
-//NOTE: please replace the ("<your-secret-name>") with the name of the secret in your vault
+# NOTE: replace "secret-name" with the name of the secret in your vault
 secret = secret_client.get_secret("secret-name")
 
-print(secret.name)
 print(secret.value)
 
 ```
